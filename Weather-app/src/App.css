@@ -19,12 +19,12 @@ main {
 }
 
 .Content-section {
-  flex: auto;
+  flex: 60%;
   padding: 20px;
 }
 
 .Content-Sidebar {
-  flex: auto;
+  flex: 30%;
   background: linear-gradient(
     167.99deg,
     #43556f 0%,
@@ -45,15 +45,17 @@ main {
 .searchBar{
     padding: 10px 40px;
     background: #F5F4F5;
-    border-radius: 20px;
+    border-radius: 15px;
     border: none;
     font-size: 18px;
     font-family: 'Lato', sans-serif;
     margin-right: 20px;
     font-weight: 600;
     color:#041027 ;
-
+    position: relative;
 }
+
+
 .SearchBtn {
     background: #F5F4F5;
     padding: 10px 30px;
