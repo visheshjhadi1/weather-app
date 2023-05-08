@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #eaeced;
+  padding: 30px;
+}
+main {
+  background-color: #fff;
+  border-radius: 10px;
+  display: flex;
+}
+
+.Content-section {
+  flex: auto;
+  padding: 20px;
+}
+
+.Content-Sidebar {
+  flex: auto;
+  background: linear-gradient(
+    167.99deg,
+    #43556f 0%,
+    #122a4d 35.52%,
+    #123066 65.95%,
+    #183a7e 98.16%
+  );
+  border-radius: 0px 10px 10px 0px;
+  padding: 20px;
+}
+
+.Main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
