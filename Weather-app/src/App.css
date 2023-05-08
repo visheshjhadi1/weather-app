@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -7,6 +9,8 @@
 body {
   background-color: #eaeced;
   padding: 30px;
+  font-family: 'Lato', sans-serif;
+
 }
 main {
   background-color: #fff;
@@ -36,4 +40,27 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.searchBar{
+    padding: 10px 40px;
+    background: #F5F4F5;
+    border-radius: 20px;
+    border: none;
+    font-size: 18px;
+    font-family: 'Lato', sans-serif;
+    margin-right: 20px;
+    font-weight: 600;
+    color:#041027 ;
+
+}
+.SearchBtn {
+    background: #F5F4F5;
+    padding: 10px 30px;
+    border: none;
+    color:#122a4d;
+    border-radius: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    
 }
