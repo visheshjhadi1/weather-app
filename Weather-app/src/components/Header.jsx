@@ -1,6 +1,7 @@
 import { useState } from "react";
 import logo from "../assets/logo.svg";
 
+// eslint-disable-next-line react/prop-types
 export default function Header({ chooseLocation }) {
 
 const [SearchedLocation , setSearchedLocation] = useState("");

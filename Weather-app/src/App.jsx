@@ -1,7 +1,7 @@
 import "./App.css";
 import {useEffect , useState} from "react";
 import Header from "./components/Header";
-import Main from "./components/Main";
+import MainBody from "./components/MainBody";
 import Sidebar from "./components/Sidebar";
 
 function App() {
@@ -26,39 +26,46 @@ useEffect(()=>{
     setDataLoc(data.location)
     setForecast(data.forecast)
   })
+  
 
 },[Location])
+
+useEffect(() => {
+  if ('geolocation' in navigator) {
+    navigator.geolocation.getCurrentPosition(position => {
+      const userLocation = `${position.coords.latitude},${position.coords.longitude}`;
+      setLocation(userLocation);
+    }, error => {
+      console.error(`Error getting location: ${error.message}`);
+    });
+  } else {
+    console.error('Geolocation is not supported by your browser');
+  }
+}, []);
+
 
 const chooseLocation = (selectLoc) => {
   setLocation(selectLoc);
 };
 
-function getLocation() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition);
-  } 
-}
-
-function showPosition(position) {
-  x.innerHTML = "Latitude: " + position.coords.latitude + 
-  "<br>Longitude: " + position.coords.longitude;
-}
-
-
-console.log(Location,Current,DataLoc,Forecast)
-
-  return (
-    <main>
-      <h1></h1>
-      <section className="Content-section">
-        <Header chooseLocation={chooseLocation} />
-        <Main />
-      </section>
-      <section className="Content-Sidebar">
-        <Sidebar />
-      </section>
-    </main>
-  );
+console.log(Current)
+return (
+  <main>
+    {Location ? (
+      <>
+        <section className="Content-section">
+          <Header chooseLocation={chooseLocation} />
+          <MainBody Weather = {{...Current}}/>
+        </section>
+        <section className="Content-Sidebar">
+          <Sidebar Location = {{...DataLoc}} Current = {{...Current}} Forecast = {{...Forecast}}/>
+        </section>
+      </>
+    ) : (
+      <p>Loading...</p>
+    )}
+  </main>
+);
 }
 
 export default App;
